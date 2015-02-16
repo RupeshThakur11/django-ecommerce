@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table class='table'>
+	{% if cart.active %}
+	<thead><th>Item</th><th>Description</th></thead>
+{% for product in cart.products.all %}
+<tr><td>{{product}}</td><td>{{ product.description}}</td></tr>
+{% endfor %}
+</table>
+<br/>
+<a href="delete" class='btn btn-danger'>Delete Cart</a>
+{% else %}
+{{message}}
+{% endif %}
+
+{% endblock %}

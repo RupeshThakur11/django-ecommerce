@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<table class='table'>
+<thead><th><h1>{{product.name}}</h1></th></thead>
+<tr>
+
+<td>{% if product.image1 %}
+<img src="/media/{{product.image1}}" style='max-width:350px;float:left;margin-right:20px;'>
+{% endif %}
+{{product.description}} {{product.price}} with a sku of {{product.sku}} and {{product.inventory}} in stock <br/>
+<a href="add">Add to cart</a>
+</td>
+</tr>
+
+</table>
+
+{% endblock %}
